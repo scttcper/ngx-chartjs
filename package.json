@@ -13,7 +13,7 @@
     "lint": "ng lint ngx-chartjs --type-check --format stylish",
     "lint:fix": "ng lint ngx-chartjs --type-check --fix --format stylish",
     "ghpages": "ng build --prod --no-progress --baseHref='/ngx-chartjs/'",
-    "travis-deploy-once": "travis-deploy-once",
+    "travis-deploy-once": "travis-deploy-once --pro",
     "commit": "git-cz",
     "semantic-release": "cd dist/packages-dist && semantic-release"
   },
