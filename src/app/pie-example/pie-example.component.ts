@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-pie-example',
   template: `
-  <h2>Pie Example</h2>
+  <h3>Pie Example</h3>
   <ngx-chartjs [data]="data" type="pie"></ngx-chartjs>
   `,
 })

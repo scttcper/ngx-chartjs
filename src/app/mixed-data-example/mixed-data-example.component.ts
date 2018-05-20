@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 let _seed = Math.random() * 100;
 
@@ -16,12 +16,12 @@ function randomScalingFactor() {
 @Component({
   selector: 'app-mixed-data-example',
   template: `
-  <h2>Mixed data Example</h2>
+  <h3>Mixed data Example</h3>
   <ngx-chartjs [data]="data" type="bar" [options]="options" [plugins]="plugins">
   </ngx-chartjs>
   `,
 })
-export class MixedDataExampleComponent implements OnInit {
+export class MixedDataExampleComponent {
   data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
@@ -88,11 +88,13 @@ export class MixedDataExampleComponent implements OnInit {
     {
       afterDraw: (chartInstance, easing) => {
         const ctx = chartInstance.chart.ctx;
+        const gradient = ctx.createLinearGradient(0, 0, 420, 0);
+        gradient.addColorStop('0', 'magenta');
+        gradient.addColorStop('0.5', 'blue');
+        gradient.addColorStop('1.0', 'red');
+        ctx.fillStyle = gradient;
         ctx.fillText('This text drawn by a plugin', 200, 100);
       },
     },
   ];
-  constructor() {}
-
-  ngOnInit() {}
 }

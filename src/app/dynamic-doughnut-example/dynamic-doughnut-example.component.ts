@@ -7,7 +7,7 @@ function getRandomInt(min, max) {
 @Component({
   selector: 'app-dynamic-doughnut-example',
   template: `
-  <h2>Dynamicly refreshed Doughnut Example</h2>
+  <h3>Dynamicly refreshed Doughnut Example</h3>
   <ngx-chartjs [data]="data"></ngx-chartjs>
   `,
 })
@@ -30,7 +30,7 @@ export class DynamicDoughnutExampleComponent implements OnInit {
             getRandomInt(100, 150),
             getRandomInt(150, 250),
           ],
-          backgroundColor: ['#CCC', '#36A2EB', '#FFCE56'],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
           hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
         },
       ],

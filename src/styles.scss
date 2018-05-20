@@ -37,10 +37,16 @@ a:hover {
 	color: #999;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h3, h4, h5, h6 {
 	color: #222;
 	margin: 0.5em 0;
   font-weight: 300;
+}
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 label {

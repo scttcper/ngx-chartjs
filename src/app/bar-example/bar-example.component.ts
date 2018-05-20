@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-bar-example',
   template: `
-  <h2>Bar Example (custom size)</h2>
+  <h3>Bar Example (custom size)</h3>
   <ngx-chartjs type="bar" [data]="data" width="300" height="300" [options]="options"></ngx-chartjs>
   `,
 })

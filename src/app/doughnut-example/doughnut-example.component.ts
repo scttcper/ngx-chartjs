@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-doughnut-example',
-  template: `<ngx-chartjs [data]="data"></ngx-chartjs>`,
+  template: `
+  <h3>Doughnut Example</h3>
+  <ngx-chartjs [data]="data"></ngx-chartjs>
+  `,
 })
 export class DoughnutExampleComponent {
   data = {

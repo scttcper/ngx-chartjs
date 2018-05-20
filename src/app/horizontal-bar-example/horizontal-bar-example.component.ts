@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-horizontal-bar-example',
   template: `
-  <h2>Horizontal Bar Example</h2>
-  <ngx-chartjs [data]="data" type="horizontalBar"></ngx-chartjs>
+  <h3>Horizontal Bar Example</h3>
+  <ngx-chartjs [data]="data" [options]="options" type="horizontalBar"></ngx-chartjs>
   `,
 })
 export class HorizontalBarExampleComponent implements OnInit {
@@ -38,6 +38,9 @@ export class HorizontalBarExampleComponent implements OnInit {
     ],
   };
   options = {
+    legend: {
+      display: false,
+    },
     scales: { xAxes: [{ ticks: { beginAtZero: true } }] },
   };
 

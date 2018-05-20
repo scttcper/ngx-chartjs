@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-scatter-example',
   template: `
-  <h2>Scatter Example</h2>
+  <h3>Scatter Example</h3>
   <ngx-chartjs [data]="data" type="scatter"></ngx-chartjs>
   `,
 })

@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "config:js-lib",
+    ":semanticCommitTypeAll(chore)",
+    "schedule:earlyMondays",
+    ":maintainLockFilesMonthly"
+  ],
+  "rebaseStalePrs": true,
+  "semanticCommits": true,
+  "patch": {
+    "automerge": true
+  }
+}

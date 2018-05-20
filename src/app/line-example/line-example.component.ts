@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-line-example',
   template: `
-    <h2>Line Example</h2>
+    <h3>Line Example</h3>
     <ngx-chartjs [data]="data" type="line"></ngx-chartjs>
   `,
 })

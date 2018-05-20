@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-polar-example',
   template: `
-  <h2>Polar Example</h2>
+  <h3>Polar Example</h3>
   <ngx-chartjs [data]="data" [options]="options" type="polarArea"></ngx-chartjs>
   `,
 })

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-legend-options-example',
   template: `
-  <h2>Legend Options Example</h2>
+  <h3>Legend Options Example</h3>
   <textarea
     cols="40"
     rows="15"

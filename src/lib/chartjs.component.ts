@@ -9,7 +9,12 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { ChartLegendOptions, ChartType } from 'chart.js';
+import {
+  ChartData,
+  ChartLegendOptions,
+  ChartOptions,
+  ChartType,
+} from 'chart.js';
 import keyBy from 'lodash-es/keyby';
 
 declare var require: any;
@@ -31,26 +36,25 @@ declare var require: any;
 export class ChartjsComponent implements AfterViewInit, OnChanges {
   chartInstance: any;
   @ViewChild('ref') ref: ElementRef<HTMLCanvasElement>;
-  @Output() event = new EventEmitter<any>();
-  @Input() data: any;
+  @Output() chartClick = new EventEmitter<ChartClickEvent>();
+  @Input() type: ChartType | string = 'doughnut';
+  @Input() data: ChartData | any;
   @Input() height = 150;
   @Input() width = 300;
   @Input()
-  legend: ChartLegendOptions = {
+  legend: ChartLegendOptions | any = {
     display: true,
     position: 'bottom',
   };
-  @Input() options: any = {};
+  @Input() options: ChartOptions | any = {};
   @Input() plugins: any[];
   @Input() redraw = false;
   /** chart type */
-  @Input() type: ChartType = 'doughnut';
   @Input() datasetKeyProvider: (x: any) => string = d => d.label;
 
   constructor(private zone: NgZone) {}
 
   ngAfterViewInit() {
-    // in order to allow for universal rendering, we import Codemirror runtime with `require` to prevent node errors
     this.renderChart();
   }
   ngOnChanges(changes: any) {
@@ -73,6 +77,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     }
 
     if (this.options) {
+      // in order to allow for universal rendering, we import Codemirror runtime with `require` to prevent node errors
       const Chart = require('chart.js');
       this.chartInstance.options = (Chart as any).helpers.configMerge(
         this.chartInstance.options,
@@ -130,9 +135,11 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     const data = this.transformData();
 
     if (typeof this.legend !== 'undefined') {
-      this.options.legend = this.legend;
+      const legendOptions = { ...this.legend, ...this.options.legend };
+      this.options.legend = legendOptions;
     }
 
+    // in order to allow for universal rendering, we import Codemirror runtime with `require` to prevent node errors
     const Chart = require('chart.js');
 
     this.zone.runOutsideAngular(() => {
@@ -157,13 +164,18 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
   }
 
   handleOnClick($event: Event) {
-    const instance = this.chartInstance;
-
-    this.event.emit({
-      elements: instance.getElementsAtEvent($event),
-      element: instance.getElementAtEvent($event),
-      dataset: instance.getDatasetAtEvent($event),
+    this.chartClick.emit({
+      elements: this.chartInstance.getElementsAtEvent($event),
+      element: this.chartInstance.getElementAtEvent($event),
+      dataset: this.chartInstance.getDatasetAtEvent($event),
       $event,
     });
   }
+}
+
+export interface ChartClickEvent {
+  elements: any[];
+  element: any;
+  dataset: any[];
+  $event: Event;
 }

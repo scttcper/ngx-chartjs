@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-randomized-data-line-example',
   template: `
-  <h2>Random Animated Line Example</h2>
+  <h3>Random Animated Line Example</h3>
   <ngx-chartjs [data]="data" type="line"></ngx-chartjs>
   `,
 })

@@ -15,7 +15,7 @@ function colorize(opaque, context) {
 @Component({
   selector: 'app-bubble-example',
   template: `
-  <h2>Bubble Example</h2>
+  <h3>Bubble Example</h3>
   <ngx-chartjs [data]="data" type="bubble" [legend]="legend" [options]="options"></ngx-chartjs>
   `,
 })

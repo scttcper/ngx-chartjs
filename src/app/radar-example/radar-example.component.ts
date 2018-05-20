@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-radar-example',
   template: `
-  <h2>Radar Example</h2>
+  <h3>Radar Example</h3>
   <ngx-chartjs [data]="data" type="radar"></ngx-chartjs>
   `,
 })

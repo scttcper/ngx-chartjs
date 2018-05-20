@@ -5,7 +5,7 @@ import * as pattern from 'patternomaly';
 @Component({
   selector: 'app-crazy-data-line-example',
   template: `
-  <h2>You can even make crazy graphs like this!</h2>
+  <h3>You can even make crazy graphs like this!</h3>
   <ngx-chartjs type="bar" [data]="data" [legend]="legend"></ngx-chartjs>
   `,
 })
