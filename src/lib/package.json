@@ -14,7 +14,10 @@
     "lib": {
       "entryFile": "public_api.ts"
     },
-    "dest": "../../dist"
+    "dest": "../../dist",
+    "whitelistedNonPeerDependencies": [
+      "@types/chart.js"
+    ]
   },
   "repository": "typectrl/ngx-chartjs",
   "homepage": "https://github.com/typectrl/ngx-chartjs",

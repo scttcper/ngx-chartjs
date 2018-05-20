@@ -15,7 +15,6 @@ import {
   ChartOptions,
   ChartType,
 } from 'chart.js';
-import keyBy from 'lodash-es/keyby';
 
 declare var require: any;
 
@@ -37,6 +36,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
   chartInstance: any;
   @ViewChild('ref') ref: ElementRef<HTMLCanvasElement>;
   @Output() chartClick = new EventEmitter<ChartClickEvent>();
+  /** chart type */
   @Input() type: ChartType | string = 'doughnut';
   @Input() data: ChartData | any;
   @Input() height = 150;
@@ -49,7 +49,6 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
   @Input() options: ChartOptions | any = {};
   @Input() plugins: any[];
   @Input() redraw = false;
-  /** chart type */
   @Input() datasetKeyProvider: (x: any) => string = d => d.label;
 
   constructor(private zone: NgZone) {}
@@ -93,10 +92,10 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
       [];
     const nextDatasets = data.datasets || [];
 
-    const currentDatasetsIndexed = keyBy(
-      currentDatasets,
-      this.datasetKeyProvider,
-    );
+    const currentDatasetsIndexed = {};
+    currentDatasets.forEach((x) => {
+      currentDatasetsIndexed[this.datasetKeyProvider(x)] = x;
+    });
 
     // We can safely replace the dataset array, as long as we retain the _meta property
     // on each dataset.
