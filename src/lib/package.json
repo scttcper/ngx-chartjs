@@ -1,0 +1,29 @@
+{
+  "name": "@ctrl/ngx-chartjs",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@types/chart.js": "^2.7.18"
+  },
+  "peerDependencies": {
+    "@angular/core": "^5.2.0 || ^6.0.0"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts"
+    },
+    "dest": "../../dist"
+  },
+  "repository": "typectrl/ngx-chartjs",
+  "homepage": "https://github.com/typectrl/ngx-chartjs",
+  "bugs": "https://github.com/typectrl/ngx-chartjs/issues",
+  "license": "MIT",
+  "description": "chartjs wrapper for angular",
+  "keywords": [
+    "chartjs",
+    "graphs",
+    "angular"
+  ]
+}
