@@ -69,24 +69,28 @@ Add droppable directive to element
 ```
 ## [Inputs]
 
-| name    | type        | default      | description                                                                                                                           |
-| ------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| type    | `string`    | `'doughnut'` | chart.js type 'bar', 'line', etc.                                                                                                     |
-| data    | `ChartData` | `{}`         | chart.js data object, [see docs](https://www.chartjs.org/docs/latest/getting-started/usage.html)                                      |
-| plugins | `any[]`     | `[]`         | chart.js plugin array, [see docs](https://www.chartjs.org/docs/latest/developers/plugins.html)                                        |
-| redraw  | `boolean`   | `false`      | force redraw on any input change, like to change legend                                                                               |
-| options | `any`       | `{}`         | chart.js options                                                                                                                      |
-| legend  | `any`       | `{}`         | chart.js legend (can be passed in via options) [see docs](https://www.chartjs.org/docs/latest/configuration/legend.html)              |
-| width   | `number`    | `300`        | canvas width                                                                                                                          |
-| height  | `number`    | `150`        | canvas height                                                                                                                         |
+| name    | type        | default                               | description                                                                                      |
+| ------- | ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| type    | `string`    | `'doughnut'`                          | chart.js type 'bar', 'line', etc.                                                                |
+| data    | `ChartData` | `{}`                                  | chart.js data object, [see docs](https://www.chartjs.org/docs/latest/getting-started/usage.html) |
+| plugins | `any[]`     | `[]`                                  | chart.js plugin array, [see docs](https://www.chartjs.org/docs/latest/developers/plugins.html)   |
+| redraw  | `boolean`   | `false`                               | force redraw on any input change, like to change legend                                          |
+| options | `any`       | `{}`                                  | chart.js options                                                                                 |
+| legend  | `any`       | `{display: true, position: 'bottom'}` | chart.js legend [see docs](https://www.chartjs.org/docs/latest/configuration/legend.html)        |
+| width   | `number`    | `300`                                 | canvas width                                                                                     |
+| height  | `number`    | `150`                                 | canvas height                                                                                    |
+
+##### Tips
+__data__: do not modify data as change detection will not fire, only replace with new object  
+__legend__: can also be overwritten via options  
 
 ## (Ouput)
 
-Chart.js events are available via the options input, otherwise a canvas click event is exposed for use
+Chart.js events are available via options or legend object, otherwise a canvas click event is exposed for use
 
-| name         | type              | description                                                                                                                                              |
-| ------------ | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chartClick   | `ChartClickEvent` | returns the click $event along with element, elements and dataset [see docs](https://www.chartjs.org/docs/latest/developers/api.html#getelementatevente) |
+| name       | type              | description                                                                                                                                              |
+| ---------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chartClick | `ChartClickEvent` | returns the click $event along with element, elements and dataset [see docs](https://www.chartjs.org/docs/latest/developers/api.html#getelementatevente) |
 
 ## License
 MIT

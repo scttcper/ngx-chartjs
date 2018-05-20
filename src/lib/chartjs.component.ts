@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
@@ -31,6 +32,7 @@ declare var require: any;
     ></canvas>
   </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartjsComponent implements AfterViewInit, OnChanges {
   chartInstance: any;
