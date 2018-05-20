@@ -15,7 +15,7 @@
     "ghpages": "ng build --prod --no-progress --baseHref='/ngx-chartjs/'",
     "travis-deploy-once": "travis-deploy-once --pro",
     "commit": "git-cz",
-    "semantic-release": "cd dist/packages-dist && semantic-release"
+    "semantic-release": "cd dist && semantic-release"
   },
   "private": true,
   "dependencies": {
