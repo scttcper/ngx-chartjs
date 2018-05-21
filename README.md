@@ -80,7 +80,7 @@ Add droppable directive to element
 | width   | `number`    | `300`                                 | canvas width                                                                                     |
 | height  | `number`    | `150`                                 | canvas height                                                                                    |
 
-##### Tips
+### Tips
 __data__: do not modify data as change detection will not fire, only replace with new object  
 __legend__: can also be overwritten via options  
 
