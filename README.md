@@ -63,7 +63,7 @@ const data = {
   ],
 };
 ```
-Add droppable directive to element
+Add ngx-chartjs directive to element
 ```html
 <ngx-chartjs [data]="data" type="bar"></div>
 ```
