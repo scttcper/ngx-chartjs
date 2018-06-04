@@ -78,7 +78,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     }
 
     if (this.options) {
-      // in order to allow for universal rendering, we import Codemirror runtime with `require` to prevent node errors
+      // in order to allow for universal rendering, we import chart.js runtime with `require` to prevent node errors
       const Chart = require('chart.js');
       this.chartInstance.options = (Chart as any).helpers.configMerge(
         this.chartInstance.options,
