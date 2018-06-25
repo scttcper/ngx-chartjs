@@ -40,7 +40,7 @@
     "@angular/cli": "6.0.8",
     "@angular/compiler-cli": "6.0.6",
     "@angular/language-service": "6.0.6",
-    "@types/chart.js": "2.7.22",
+    "@types/chart.js": "2.7.23",
     "@types/fs-extra": "5.0.3",
     "@types/jasmine": "2.8.8",
     "@types/node": "10.1.4",
