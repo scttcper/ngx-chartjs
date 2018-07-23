@@ -66,7 +66,7 @@ const data = {
 ```
 Add ngx-chartjs directive to element
 ```html
-<ngx-chartjs [data]="data" type="bar"></div>
+<ngx-chartjs [data]="data" type="bar"></ngx-chartjs>
 ```
 ## [Inputs]
 
