@@ -22,6 +22,7 @@ Based on [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)
 Demo: https://typectrl.github.io/ngx-chartjs/
 
 ## Install
+requires the js package __chart.js__
 ```sh
 npm install @ctrl/ngx-chartjs chart.js
 ```
