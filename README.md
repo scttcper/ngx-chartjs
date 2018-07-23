@@ -23,7 +23,7 @@ Demo: https://typectrl.github.io/ngx-chartjs/
 
 ## Install
 ```sh
-npm install @ctrl/ngx-chartjs
+npm install @ctrl/ngx-chartjs chart.js
 ```
 
 ## Use
