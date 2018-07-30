@@ -43,7 +43,7 @@
     "@types/chart.js": "2.7.30",
     "@types/fs-extra": "5.0.4",
     "@types/jasmine": "2.8.8",
-    "@types/node": "10.5.2",
+    "@types/node": "10.5.4",
     "codelyzer": "4.4.2",
     "cz-conventional-changelog": "2.1.0",
     "commitizen": "2.10.1",
