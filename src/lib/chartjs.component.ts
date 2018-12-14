@@ -130,7 +130,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
       return next;
     });
 
-    const {datasets, ...rest} = data;
+    const { datasets, ...rest } = data;
 
     this.chartInstance.config.data = {
       ...this.chartInstance.config.data,
@@ -145,7 +145,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     const data = this.transformData();
 
     if (typeof this.legend !== 'undefined') {
-      const legendOptions = {...this.legend, ...this.options.legend};
+      const legendOptions = { ...this.legend, ...this.options.legend };
       this.options.legend = legendOptions;
     }
 
