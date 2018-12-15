@@ -105,18 +105,27 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
       const current = currentDatasetsIndexed[this.datasetKeyProvider(next)];
 
       if (current && current.type === next.type) {
+        // Reassign all properties from next
+        for (const nextProp of Object.keys(next)) {
+          // Data array can't be reassigned here.
+          if (nextProp !== 'data') {
+            current[nextProp] = next[nextProp];
+          }
+        }
+        // Remove properties from current if they was removed in next
+        for (const currentProp of Object.keys(current)) {
+          // Be careful with _meta property
+          if (!next.hasOwnProperty(currentProp) && currentProp !== '_meta') {
+            delete current[currentProp];
+          }
+        }
         // The data array must be edited in place. As chart.js adds listeners to it.
         current.data.splice(next.data.length);
         next.data.forEach((point, pid) => {
           current.data[pid] = next.data[pid];
         });
-        // Merge properties. Notice a weakness here. If a property is removed
-        // from next, it will be retained by current and never disappears.
-        // Workaround is to set value to null or undefined in next.
-        return {
-          ...current,
-          ...next.otherProps,
-        };
+
+        return current;
       }
       return next;
     });
