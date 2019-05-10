@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// tslint:disable-next-line: variable-name
 let _seed = Math.random() * 100;
 
 function rand(min, max) {

@@ -40,7 +40,7 @@ export class RandomizedDataLineExampleComponent implements OnInit {
       const oldDataSet = this.data.datasets[0];
       const newData = [];
 
-      for (let x = 0; x < this.data.labels.length; x++) {
+      for (const _ of this.data.labels) {
         newData.push(Math.floor(Math.random() * 100));
       }
 

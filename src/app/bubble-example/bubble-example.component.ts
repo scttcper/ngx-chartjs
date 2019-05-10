@@ -163,18 +163,18 @@ export class BubbleExampleComponent {
 
         borderColor: colorize.bind(null, true),
 
-        borderWidth: function(context) {
+        borderWidth(context) {
           return Math.min(Math.max(1, context.datasetIndex + 1), 8);
         },
 
         hoverBackgroundColor: 'transparent',
 
-        hoverBorderWidth: function(context) {
+        hoverBorderWidth(context) {
           const value = context.dataset.data[context.dataIndex];
           return Math.round(8 * value.v / 1000);
         },
 
-        radius: function(context) {
+        radius(context) {
           const value = context.dataset.data[context.dataIndex];
           const size = context.chart.width;
           const base = Math.abs(value.v) / 1000;
