@@ -19,7 +19,7 @@
 
 Based on [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)  
 
-Demo: https://typectrl.github.io/ngx-chartjs/
+Demo: https://ngx-chartjs.netlify.com/  
 
 ## Install
 requires the js package __chart.js__
