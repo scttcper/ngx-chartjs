@@ -36,7 +36,7 @@ declare var require: any;
 })
 export class ChartjsComponent implements AfterViewInit, OnChanges {
   chartInstance: any;
-  @ViewChild('ref') ref: ElementRef<HTMLCanvasElement>;
+  @ViewChild('ref', { static: true }) ref: ElementRef<HTMLCanvasElement>;
   @Output() chartClick = new EventEmitter<ChartClickEvent>();
   /** chart type */
   @Input() type: ChartType | string = 'doughnut';

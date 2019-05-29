@@ -14,25 +14,39 @@
   <br>
 </div>
 
+> Functional [Chart.js](https://www.chartjs.org/) wrapper for Angular
 
-> Functional [Chart.js](https://www.chartjs.org/) wrapper for Angular 
+Based on [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)
 
-Based on [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)  
-
-Demo: https://ngx-chartjs.netlify.com/  
+Demo: https://ngx-chartjs.netlify.com/
 
 ## Install
-requires the js package __chart.js__
+
+requires the js package **chart.js**
+
 ```sh
 npm install @ctrl/ngx-chartjs chart.js
 ```
 
+## Dependencies
+
+Latest version available for each version of Angular
+
+| @ctrl/ngx-chartjs | Angular |
+| ----------------- | ------- |
+| 1.1.2             | 6.x 7.x |
+| 2.0.0             | 8.x     |
+
 ## Use
+
 Import and Add to module
+
 ```ts
 import { ChartjsModule } from '@ctrl/ngx-chartjs';
 ```
+
 setup data and other settings
+
 ```ts
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -64,10 +78,13 @@ const data = {
   ],
 };
 ```
+
 Add ngx-chartjs directive to element
+
 ```html
 <ngx-chartjs [data]="data" type="bar"></ngx-chartjs>
 ```
+
 ## [Inputs]
 
 | name    | type        | default                               | description                                                                                      |
@@ -82,18 +99,20 @@ Add ngx-chartjs directive to element
 | height  | `number`    | `150`                                 | canvas height                                                                                    |
 
 ### Tips
-__data__: do not modify data as change detection will not fire, only replace with new object  
-__legend__: can also be overwritten via options  
+
+**data**: do not modify data as change detection will not fire, only replace with new object  
+**legend**: can also be overwritten via options
 
 ## (Ouput)
 
 Chart.js events are available via options or legend object, otherwise a canvas click event is exposed for use
 
-| name       | type              | description                                                                                                                                              |
-| ---------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chartClick | `ChartClickEvent` | returns the click $event along with element, elements and dataset [see docs](https://www.chartjs.org/docs/latest/developers/api.html#getelementatevente) |
+| name       | type              | description                                                                                                                                               |
+| ---------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| chartClick | `ChartClickEvent` | returns the click \$event along with element, elements and dataset [see docs](https://www.chartjs.org/docs/latest/developers/api.html#getelementatevente) |
 
 ## License
+
 MIT
 
 ---
