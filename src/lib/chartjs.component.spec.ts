@@ -13,7 +13,7 @@ import { ChartjsModule } from './chartjs.module';
   `,
 })
 export class TestComponent {
-  @ViewChild('c') chartjs: ChartjsComponent;
+  @ViewChild('c', { static: true }) chartjs: ChartjsComponent;
   redraw = false;
   height = 300;
   type = 'bar';
