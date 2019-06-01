@@ -42,7 +42,7 @@
     "@types/jasmine": "3.3.13",
     "@types/node": "12.0.4",
     "codelyzer": "5.0.1",
-    "del-cli": "1.1.0",
+    "del-cli": "2.0.0",
     "fs-extra": "8.0.1",
     "jasmine-core": "3.4.0",
     "karma": "4.1.0",
