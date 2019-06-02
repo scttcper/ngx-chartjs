@@ -41,8 +41,8 @@
     "@types/fs-extra": "7.0.0",
     "@types/jasmine": "3.3.13",
     "@types/node": "12.0.4",
-    "codelyzer": "5.0.1",
-    "del-cli": "1.1.0",
+    "codelyzer": "5.1.0",
+    "del-cli": "2.0.0",
     "fs-extra": "8.0.1",
     "jasmine-core": "3.4.0",
     "karma": "4.1.0",
@@ -55,7 +55,7 @@
     "semantic-release": "15.13.12",
     "ts-node": "8.2.0",
     "tsickle": "0.35.0",
-    "tslint": "5.16.0",
+    "tslint": "5.17.0",
     "typescript": "3.4.5"
   },
   "engines": {
