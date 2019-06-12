@@ -4,8 +4,8 @@
   <a href="https://www.npmjs.com/package/@ctrl/ngx-chartjs">
     <img src="https://img.shields.io/npm/v/@ctrl/ngx-chartjs.svg" alt="npm">
   </a>
-  <a href="https://travis-ci.com/TypeCtrl/ngx-chartjs">
-    <img src="https://travis-ci.com/TypeCtrl/ngx-chartjs.svg?branch=master" alt="travis">
+  <a href="https://circleci.com/gh/TypeCtrl/ngx-chartjs">
+    <img src="https://circleci.com/gh/TypeCtrl/ngx-chartjs.svg?style=svg" alt="travis">
   </a>
   <a href="https://codecov.io/github/typectrl/ngx-chartjs">
     <img src="https://img.shields.io/codecov/c/github/typectrl/ngx-chartjs.svg" alt="codecov">
