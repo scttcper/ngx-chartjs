@@ -1,4 +1,4 @@
-import { copySync } from 'fs-extra';
+import { copyFileSync } from 'fs';
 import { ngPackagr } from 'ng-packagr';
 import { join } from 'path';
 
@@ -9,8 +9,8 @@ async function main() {
     .build();
 
   // copy everything else
-  copySync('README.md', join(process.cwd(), 'dist/README.md'));
-  copySync('LICENSE', join(process.cwd(), 'dist/LICENSE'));
+  copyFileSync('README.md', join(process.cwd(), 'dist/README.md'));
+  copyFileSync('LICENSE', join(process.cwd(), 'dist/LICENSE'));
 }
 
 main()
