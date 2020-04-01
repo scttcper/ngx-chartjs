@@ -40,7 +40,7 @@
     "@angular/language-service": "9.1.0",
     "@types/chart.js": "2.9.18",
     "@types/jasmine": "3.5.10",
-    "@types/node": "13.7.6",
+    "@types/node": "13.9.8",
     "codelyzer": "5.2.2",
     "del-cli": "3.0.0",
     "jasmine-core": "3.5.0",
