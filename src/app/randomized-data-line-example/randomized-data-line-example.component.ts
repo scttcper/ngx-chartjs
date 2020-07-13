@@ -38,7 +38,7 @@ export class RandomizedDataLineExampleComponent implements OnInit {
   ngOnInit() {
     setInterval(() => {
       const oldDataSet = this.data.datasets[0];
-      const newData = [];
+      const newData: number[] = [];
 
       for (const _ of this.data.labels) {
         newData.push(Math.floor(Math.random() * 100));

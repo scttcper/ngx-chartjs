@@ -10,33 +10,28 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import {
-  ChartData,
-  ChartLegendOptions,
-  ChartOptions,
-  ChartType,
-} from 'chart.js';
+import { ChartData, ChartLegendOptions, ChartOptions, ChartType } from 'chart.js';
 
 declare var require: any;
 
 @Component({
   selector: 'ngx-chartjs',
   template: `
-  <!-- wrapping div required for height, width to work -->
-  <div>
-    <canvas
-      #ref
-      [attr.height]="height"
-      [attr.width]="width"
-      (click)="handleOnClick($event)"
-    ></canvas>
-  </div>
+    <!-- wrapping div required for height, width to work -->
+    <div>
+      <canvas
+        #ref
+        [attr.height]="height"
+        [attr.width]="width"
+        (click)="handleOnClick($event)"
+      ></canvas>
+    </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartjsComponent implements AfterViewInit, OnChanges {
-  chartInstance: any;
-  @ViewChild('ref', { static: true }) ref: ElementRef<HTMLCanvasElement>;
+  chartInstance!: Chart;
+  @ViewChild('ref', { static: true }) ref!: ElementRef<HTMLCanvasElement>;
   @Output() chartClick = new EventEmitter<ChartClickEvent>();
   /** chart type */
   @Input() type: ChartType | string = 'doughnut';
@@ -49,7 +44,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     position: 'bottom',
   };
   @Input() options: ChartOptions | any = {};
-  @Input() plugins: any[];
+  @Input() plugins?: any[];
   @Input() redraw = false;
   @Input() datasetKeyProvider: (x: any) => string = d => d.label;
 
@@ -89,19 +84,17 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     // Pipe datasets to chart instance datasets enabling
     // seamless transitions
     const currentDatasets: any[] =
-      (this.chartInstance.config.data &&
-        this.chartInstance.config.data.datasets) ||
-      [];
-    const nextDatasets = data.datasets || [];
+      (this.chartInstance.config.data && this.chartInstance.config.data.datasets) || [];
+    const nextDatasets: any[] = data.datasets || [];
 
     const currentDatasetsIndexed = {};
-    currentDatasets.forEach((x) => {
+    currentDatasets.forEach(x => {
       currentDatasetsIndexed[this.datasetKeyProvider(x)] = x;
     });
 
     // We can safely replace the dataset array, as long as we retain the _meta property
     // on each dataset.
-    this.chartInstance.config.data.datasets = nextDatasets.map(next => {
+    this.chartInstance.config.data!.datasets = nextDatasets.map(next => {
       const current = currentDatasetsIndexed[this.datasetKeyProvider(next)];
 
       if (current && current.type === next.type) {
@@ -149,7 +142,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
       this.options.legend = legendOptions;
     }
 
-    // in order to allow for universal rendering, we import Codemirror runtime with `require` to prevent node errors
+    // In order to allow for universal rendering, we import chartjs runtime with `require` to prevent node errors
     const Chart = require('chart.js');
 
     this.zone.runOutsideAngular(() => {

@@ -9,11 +9,18 @@ import { ChartjsModule } from './chartjs.module';
 @Component({
   selector: 'test-component',
   template: `
-  <ngx-chartjs #c [type]="type" [data]="data" width="300" [height]="height" [redraw]="redraw"></ngx-chartjs>
+    <ngx-chartjs
+      #c
+      [type]="type"
+      [data]="data"
+      [width]="300"
+      [height]="height"
+      [redraw]="redraw"
+    ></ngx-chartjs>
   `,
 })
 export class TestComponent {
-  @ViewChild('c', { static: true }) chartjs: ChartjsComponent;
+  @ViewChild('c', { static: true }) chartjs!: ChartjsComponent;
   redraw = false;
   height = 300;
   type = 'bar';

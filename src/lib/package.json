@@ -5,10 +5,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@types/chart.js": "^2.9.11"
+    "@types/chart.js": "^2.9.22"
   },
   "peerDependencies": {
-    "@angular/core": ">=9.0.0-0"
+    "@angular/core": ">=10.0.0-0"
   },
   "ngPackage": {
     "lib": {
@@ -19,9 +19,8 @@
       "@types/chart.js"
     ]
   },
-  "repository": "typectrl/ngx-chartjs",
-  "homepage": "https://github.com/typectrl/ngx-chartjs",
-  "bugs": "https://github.com/typectrl/ngx-chartjs/issues",
+  "repository": "scttcper/ngx-chartjs",
+  "homepage": "https://ngx-chartjs.vercel.app",
   "license": "MIT",
   "description": "chartjs wrapper for angular",
   "keywords": [

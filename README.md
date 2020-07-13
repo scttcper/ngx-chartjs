@@ -4,11 +4,11 @@
   <a href="https://www.npmjs.com/package/@ctrl/ngx-chartjs">
     <img src="https://img.shields.io/npm/v/@ctrl/ngx-chartjs.svg" alt="npm">
   </a>
-  <a href="https://circleci.com/gh/TypeCtrl/ngx-chartjs">
-    <img src="https://circleci.com/gh/TypeCtrl/ngx-chartjs.svg?style=svg" alt="travis">
+  <a href="https://circleci.com/gh/scttcper/ngx-chartjs">
+    <img src="https://circleci.com/gh/scttcper/ngx-chartjs.svg?style=svg" alt="travis">
   </a>
-  <a href="https://codecov.io/github/typectrl/ngx-chartjs">
-    <img src="https://img.shields.io/codecov/c/github/typectrl/ngx-chartjs.svg" alt="codecov">
+  <a href="https://codecov.io/github/scttcper/ngx-chartjs">
+    <img src="https://img.shields.io/codecov/c/github/scttcper/ngx-chartjs.svg" alt="codecov">
   </a>
   <br>
   <br>
@@ -18,7 +18,7 @@
 
 Based on [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)
 
-Demo: https://ngx-chartjs.netlify.com/
+Demo: https://ngx-chartjs.vercel.app
 
 ## Install
 
@@ -36,6 +36,8 @@ Latest version available for each version of Angular
 | ----------------- | ------- |
 | 1.1.2             | 6.x 7.x |
 | 2.0.0             | 8.x     |
+| 3.0.1             | 9.x     |
+| current           | >= 10.x |
 
 ## Use
 
