@@ -5,10 +5,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@types/chart.js": "^2.9.22"
+    "@types/chart.js": "^2.9.23"
   },
   "peerDependencies": {
-    "@angular/core": ">=10.0.0-0"
+    "@angular/core": ">=10.0.0-0",
+    "chart.js": "~2.9.3"
   },
   "ngPackage": {
     "lib": {
