@@ -37,8 +37,7 @@ Latest version available for each version of Angular
 | 1.1.2             | 6.x 7.x |
 | 2.0.0             | 8.x     |
 | 3.0.1             | 9.x     |
-| 4.0.2             | 10.x    |
-| current           | >= 11.x |
+| current           | >= 10.x |
 
 ## Use
 

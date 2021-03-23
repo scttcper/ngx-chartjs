@@ -1,5 +1,5 @@
 import { Component, NgModule, ViewChild } from '@angular/core';
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 
 import { Chart } from 'chart.js';
 
@@ -47,12 +47,12 @@ export class TestComponent {
 export class NameModule {}
 
 describe('ChartjsComponent', () => {
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [NameModule],
     }).compileComponents();
   }));
-  it('should call render', waitForAsync(() => {
+  it('should call render', async(() => {
     const spy = spyOn(Chart.prototype, 'render');
     const fixture = TestBed.createComponent(TestComponent);
     const tc: TestComponent = fixture.debugElement.componentInstance;
@@ -60,7 +60,7 @@ describe('ChartjsComponent', () => {
     expect(tc).toBeTruthy();
     expect(spy).toHaveBeenCalled();
   }));
-  it('should call renderChart', waitForAsync(() => {
+  it('should call renderChart', async(() => {
     const fixture = TestBed.createComponent(TestComponent);
     const tc: TestComponent = fixture.componentInstance;
     fixture.detectChanges();
