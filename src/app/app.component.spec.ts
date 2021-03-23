@@ -1,4 +1,4 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
 import { ChartjsModule } from '../lib/public_api';
@@ -20,7 +20,7 @@ import { RandomizedDataLineExampleComponent } from './randomized-data-line-examp
 import { ScatterExampleComponent } from './scatter-example/scatter-example.component';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -43,7 +43,7 @@ describe('AppComponent', () => {
       imports: [FormsModule, ChartjsModule],
     }).compileComponents();
   }));
-  it('should create the app', waitForAsync(() => {
+  it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
