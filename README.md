@@ -25,7 +25,7 @@ Demo: https://ngx-chartjs.vercel.app
 requires the js package **chart.js**
 
 ```sh
-npm install @ctrl/ngx-chartjs chart.js
+npm install @ctrl/ngx-chartjs chart.js@^2.9
 ```
 
 ## Dependencies
