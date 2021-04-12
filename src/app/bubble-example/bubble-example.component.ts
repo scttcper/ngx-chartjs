@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
 
-function colorize(opaque, context) {
+const colorize = (opaque, context) => {
   const value = context.dataset.data[context.dataIndex];
   const x = value.x / 100;
   const y = value.y / 100;
   const r = x < 0 && y < 0 ? 250 : x < 0 ? 150 : y < 0 ? 50 : 0;
   const g = x < 0 && y < 0 ? 0 : x < 0 ? 50 : y < 0 ? 150 : 250;
   const b = x < 0 && y < 0 ? 0 : x > 0 && y > 0 ? 250 : 150;
-  const a = opaque ? 1 : 0.5 * value.v / 1000;
+  const a = opaque ? 1 : (0.5 * value.v) / 1000;
 
   return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
-}
+};
 
 @Component({
   selector: 'app-bubble-example',
   template: `
-  <h3>Bubble Example</h3>
-  <ngx-chartjs [data]="data" type="bubble" [options]="options"></ngx-chartjs>
+    <h3>Bubble Example</h3>
+    <ngx-chartjs [data]="data" type="bubble" [options]="options"></ngx-chartjs>
   `,
 })
 export class BubbleExampleComponent {
@@ -161,22 +161,20 @@ export class BubbleExampleComponent {
 
         borderColor: colorize.bind(null, true),
 
-        borderWidth(context) {
-          return Math.min(Math.max(1, context.datasetIndex + 1), 8);
-        },
+        borderWidth: (context) => Math.min(Math.max(1, context.datasetIndex + 1), 8),
 
         hoverBackgroundColor: 'transparent',
 
-        hoverBorderWidth(context) {
+        hoverBorderWidth: (context) => {
           const value = context.dataset.data[context.dataIndex];
-          return Math.round(8 * value.v / 1000);
+          return Math.round((8 * value.v) / 1000);
         },
 
-        radius(context) {
+        radius: (context) => {
           const value = context.dataset.data[context.dataIndex];
           const size = context.chart.width;
           const base = Math.abs(value.v) / 1000;
-          return size / 24 * base;
+          return (size / 24) * base;
         },
       },
     },

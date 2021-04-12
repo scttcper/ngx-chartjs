@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartData } from 'chart.js';
 
-function getRandomInt(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const getRandomInt = (min: number, max: number): number =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 
 @Component({
   selector: 'app-dynamic-doughnut-example',

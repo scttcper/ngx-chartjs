@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import type { Chart, ChartData, ChartOptions, ChartType, UpdateMode } from 'chart.js';
 
-declare var require: any;
+declare let require: any;
 
 @Component({
   selector: 'ngx-chartjs',
@@ -18,17 +18,16 @@ declare var require: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartjsComponent implements AfterViewInit, OnChanges {
-  chartInstance!: Chart;
   @ViewChild('ref', { static: true }) ref!: ElementRef<HTMLCanvasElement>;
-  /** chart type */
   @Input() type!: ChartType;
   @Input() data!: ChartData;
   @Input() options!: ChartOptions;
   @Input() height = 150;
   @Input() width = 300;
   @Input() plugins?: any[];
-  @Input() redraw = false;
+  @Input() redraw?: boolean;
   @Input() updateMode?: UpdateMode;
+  chartInstance?: Chart;
 
   constructor(private zone: NgZone) {}
 
@@ -60,6 +59,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     const node = this.ref.nativeElement;
 
     // In order to allow for universal rendering, we import chartjs runtime with `require` to prevent node errors
+    // eslint-disable-next-line @typescript-eslint/naming-convention,@typescript-eslint/no-shadow
     const { Chart } = require('chart.js');
     this.zone.runOutsideAngular(() => {
       this.chartInstance = new Chart(node, {
