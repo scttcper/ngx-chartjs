@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
   <h3>Legend Handlers Example</h3>
   <p>Hover over label and click</p>
-  <ngx-chartjs [data]="data" [legend]="legend"></ngx-chartjs>
+  <ngx-chartjs type="doughnut" [data]="data" [legend]="legend"></ngx-chartjs>
   `,
 })
 export class LegendHandlersExampleComponent {

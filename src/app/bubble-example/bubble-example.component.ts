@@ -16,11 +16,10 @@ function colorize(opaque, context) {
   selector: 'app-bubble-example',
   template: `
   <h3>Bubble Example</h3>
-  <ngx-chartjs [data]="data" type="bubble" [legend]="legend" [options]="options"></ngx-chartjs>
+  <ngx-chartjs [data]="data" type="bubble" [options]="options"></ngx-chartjs>
   `,
 })
 export class BubbleExampleComponent {
-  legend = { display: false };
   data = {
     datasets: [
       {
@@ -155,7 +154,6 @@ export class BubbleExampleComponent {
   };
   options = {
     aspectRatio: 1,
-    legend: false,
     tooltips: false,
     elements: {
       point: {
