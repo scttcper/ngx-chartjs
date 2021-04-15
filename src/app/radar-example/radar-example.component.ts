@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
+import type { ChartData, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-radar-example',
   template: `
   <h3>Radar Example</h3>
-  <ngx-chartjs [data]="data" type="radar"></ngx-chartjs>
+  <ngx-chartjs type="radar" [data]="data" [options]="options"></ngx-chartjs>
   `,
 })
 export class RadarExampleComponent {
-  data = {
+  data: ChartData = {
     labels: [
       'Eating',
       'Drinking',
@@ -40,5 +41,9 @@ export class RadarExampleComponent {
         data: [28, 48, 40, 19, 96, 27, 100],
       },
     ],
+  };
+
+  options: ChartOptions = {
+    responsive: true,
   };
 }

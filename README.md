@@ -22,10 +22,10 @@ Demo: https://ngx-chartjs.vercel.app
 
 ## Install
 
-requires the js package **chart.js**
+requires peer dependency js package **chart.js**
 
 ```sh
-npm install @ctrl/ngx-chartjs chart.js@^2.9
+npm install @ctrl/ngx-chartjs chart.js
 ```
 
 ## Dependencies

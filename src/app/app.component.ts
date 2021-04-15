@@ -3,7 +3,6 @@ import {
   ArcElement,
   BarController,
   BarElement,
-  BubbleController,
   CategoryScale,
   Chart,
   DoughnutController,
@@ -15,9 +14,9 @@ import {
   PolarAreaController,
   RadarController,
   RadialLinearScale,
-  ScatterController,
   Title,
   Tooltip,
+  Legend,
 } from 'chart.js';
 
 @Component({
@@ -30,7 +29,6 @@ export class AppComponent implements OnInit {
       ArcElement,
       BarController,
       BarElement,
-      BubbleController,
       CategoryScale,
       DoughnutController,
       LinearScale,
@@ -41,9 +39,9 @@ export class AppComponent implements OnInit {
       PolarAreaController,
       RadarController,
       RadialLinearScale,
-      ScatterController,
       Title,
       Tooltip,
+      Legend,
     );
   }
 }

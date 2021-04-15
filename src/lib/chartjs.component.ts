@@ -18,16 +18,17 @@ declare let require: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartjsComponent implements AfterViewInit, OnChanges {
-  @ViewChild('ref', { static: true }) ref!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('ref') ref!: ElementRef<HTMLCanvasElement>;
   @Input() type!: ChartType;
   @Input() data!: ChartData;
   @Input() options!: ChartOptions;
   @Input() height = 150;
   @Input() width = 300;
   @Input() plugins?: any[];
+  /** Force destroy and redraw on chart update */
   @Input() redraw?: boolean;
   @Input() updateMode?: UpdateMode;
-  chartInstance?: Chart;
+  chartInstance!: Chart;
 
   constructor(private zone: NgZone) {}
 
@@ -35,7 +36,7 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
     this.renderChart();
   }
 
-  ngOnChanges(changes: any) {
+  ngOnChanges() {
     if (this.chartInstance && this.redraw) {
       this.chartInstance.destroy();
       this.renderChart();
