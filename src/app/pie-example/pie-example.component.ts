@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import type { ChartData, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-pie-example',
   template: `
-  <h3>Pie Example</h3>
-  <ngx-chartjs [data]="data" type="pie"></ngx-chartjs>
+    <h3>Pie Example</h3>
+    <ngx-chartjs type="pie" [data]="data" [options]="options"></ngx-chartjs>
   `,
 })
-export class PieExampleComponent implements OnInit {
-  data = {
+export class PieExampleComponent {
+  data: ChartData = {
     labels: ['Red', 'Green', 'Yellow'],
     datasets: [
       {
@@ -19,7 +20,7 @@ export class PieExampleComponent implements OnInit {
     ],
   };
 
-  constructor() {}
-
-  ngOnInit() {}
+  options: ChartOptions = {
+    responsive: true,
+  };
 }

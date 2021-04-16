@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
+import type { ChartData, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-polar-example',
   template: `
-  <h3>Polar Example</h3>
-  <ngx-chartjs [data]="data" [options]="options" type="polarArea"></ngx-chartjs>
+    <h3>Polar Example</h3>
+    <ngx-chartjs type="polarArea" [data]="data" [options]="options"></ngx-chartjs>
   `,
 })
 export class PolarExampleComponent {
-  data = {
+  data: ChartData = {
     labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
     datasets: [
       {
@@ -24,24 +25,20 @@ export class PolarExampleComponent {
       },
     ],
   };
-  options = {
+  options: ChartOptions = {
     responsive: true,
-    legend: {
-      position: 'right',
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Polar Area Chart',
-    },
-    scale: {
-      ticks: {
-        beginAtZero: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Polar Area Chart',
       },
-      reverse: false,
+      legend: {
+        position: 'top',
+      },
     },
     animation: {
-      animateRotate: false,
-      animateScale: true,
+      // animateRotate: false,
+      // animateScale: true,
     },
   };
 }

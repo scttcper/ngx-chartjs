@@ -22,10 +22,10 @@ Demo: https://ngx-chartjs.vercel.app
 
 ## Install
 
-requires the js package **chart.js**
+requires peer dependency js package **chart.js**
 
 ```sh
-npm install @ctrl/ngx-chartjs chart.js@^2.9
+npm install @ctrl/ngx-chartjs chart.js
 ```
 
 ## Dependencies
@@ -51,7 +51,8 @@ import { ChartjsModule } from '@ctrl/ngx-chartjs';
 setup data and other settings
 
 ```ts
-const data = {
+import type { ChartData, ChartOptions } from 'chart.js';
+const data: ChartData = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
@@ -80,39 +81,38 @@ const data = {
     },
   ],
 };
+const options: ChartOptions = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Chart.js Doughnut Chart',
+    },
+  },
+};
 ```
 
 Add ngx-chartjs directive to element
 
 ```html
-<ngx-chartjs [data]="data" type="bar"></ngx-chartjs>
+<ngx-chartjs type="bar" [data]="data" [options]="options"></ngx-chartjs>
 ```
 
 ## [Inputs]
 
-| name    | type        | default                               | description                                                                                      |
-| ------- | ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| type    | `string`    | `'doughnut'`                          | chart.js type 'bar', 'line', etc.                                                                |
-| data    | `ChartData` | `{}`                                  | chart.js data object, [see docs](https://www.chartjs.org/docs/latest/getting-started/usage.html) |
-| plugins | `any[]`     | `[]`                                  | chart.js plugin array, [see docs](https://www.chartjs.org/docs/latest/developers/plugins.html)   |
-| redraw  | `boolean`   | `false`                               | force redraw on any input change, like to change legend                                          |
-| options | `any`       | `{}`                                  | chart.js options                                                                                 |
-| legend  | `any`       | `{display: true, position: 'bottom'}` | chart.js legend [see docs](https://www.chartjs.org/docs/latest/configuration/legend.html)        |
-| width   | `number`    | `300`                                 | canvas width                                                                                     |
-| height  | `number`    | `150`                                 | canvas height                                                                                    |
+| name       | type        | default      | description                                                                                      |
+| ---------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------ |
+| type       | `string`    | `'doughnut'` | chart.js type 'bar', 'line', etc.                                                                |
+| data       | `ChartData` | `{}`         | chart.js data object, [see docs](https://www.chartjs.org/docs/latest/getting-started/usage.html) |
+| options    | `any`       | `{}`         | chart.js options                                                                                 |
+| redraw     | `boolean`   | `false`      | force redraw on any input change, like to change legend                                          |
+| updateMode | `string`    | `undefined`  | parameter passed to chart.update()                                                               |
+| width      | `number`    | `300`        | canvas width                                                                                     |
+| height     | `number`    | `150`        | canvas height                                                                                    |
 
-### Tips
-
-**data**: do not modify data as change detection will not fire, only replace with new object  
-**legend**: can also be overwritten via options
-
-## (Ouput)
-
-Chart.js events are available via options or legend object, otherwise a canvas click event is exposed for use
-
-| name       | type              | description                                                                                                                                               |
-| ---------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chartClick | `ChartClickEvent` | returns the click \$event along with element, elements and dataset [see docs](https://www.chartjs.org/docs/latest/developers/api.html#getelementatevente) |
 
 ## License
 

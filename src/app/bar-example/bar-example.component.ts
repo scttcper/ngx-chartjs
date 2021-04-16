@@ -1,20 +1,15 @@
 import { Component } from '@angular/core';
+import type { ChartData, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-bar-example',
   template: `
-    <h3>Bar Example (custom size)</h3>
-    <ngx-chartjs
-      type="bar"
-      [data]="data"
-      [width]="300"
-      [height]="300"
-      [options]="options"
-    ></ngx-chartjs>
+    <h3>Bar Example</h3>
+    <ngx-chartjs type="bar" [data]="data" [options]="options"></ngx-chartjs>
   `,
 })
 export class BarExampleComponent {
-  data = {
+  data: ChartData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
@@ -43,8 +38,10 @@ export class BarExampleComponent {
       },
     ],
   };
-  options = {
+
+  options: ChartOptions = {
+    responsive: true,
     maintainAspectRatio: false,
-    scales: { yAxes: [{ ticks: { beginAtZero: true } }] },
+    scales: { y: { beginAtZero: true } },
   };
 }
