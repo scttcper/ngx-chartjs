@@ -16,6 +16,7 @@ declare let require: any;
   selector: 'ngx-chartjs',
   template: `<canvas #ref [attr.height]="height" [attr.width]="width"></canvas>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [':host { display: block }']
 })
 export class ChartjsComponent implements AfterViewInit, OnChanges {
   @ViewChild('ref') ref!: ElementRef<HTMLCanvasElement>;
