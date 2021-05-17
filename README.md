@@ -38,7 +38,8 @@ Latest version available for each version of Angular
 | 2.0.0             | 8.x     |
 | 3.0.1             | 9.x     |
 | 4.0.2             | 10.x    |
-| current           | >= 11.x |
+| 6.0.1             | 11.x    |
+| current           | >=12.x  |
 
 ## Use
 
@@ -46,6 +47,14 @@ Import and Add to module
 
 ```ts
 import { ChartjsModule } from '@ctrl/ngx-chartjs';
+```
+
+register chartjs at root of app or module. Must run before this component mounts
+
+```ts
+// What you register will depend on what chart you are using and features used.
+import { BarController, BarElement, Chart, Title, Tooltip, Legend } from 'chart.js';
+Chart.register(BarController, BarElement, Chart, Title, Tooltip, Legend);
 ```
 
 setup data and other settings
@@ -112,7 +121,6 @@ Add ngx-chartjs directive to element
 | updateMode | `string`    | `undefined`  | parameter passed to chart.update()                                                               |
 | width      | `number`    | `300`        | canvas width                                                                                     |
 | height     | `number`    | `150`        | canvas height                                                                                    |
-
 
 ## License
 
