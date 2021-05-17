@@ -12,7 +12,7 @@
     "link": "cd dist && npm link",
     "lint": "ng lint ngx-chartjs",
     "lint:fix": "ng lint ngx-chartjs --fix",
-    "ghpages": "del-cli dist && ng build --prod --no-progress"
+    "ghpages": "del-cli dist && ng build --configuration production --no-progress"
   },
   "private": true,
   "dependencies": {

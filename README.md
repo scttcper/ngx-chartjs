@@ -52,9 +52,18 @@ import { ChartjsModule } from '@ctrl/ngx-chartjs';
 register chartjs at root of app or module. Must run before this component mounts
 
 ```ts
+import {
+  BarController,
+  BarElement,
+  Chart,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 // What you register will depend on what chart you are using and features used.
-import { BarController, BarElement, Chart, Title, Tooltip, Legend } from 'chart.js';
-Chart.register(BarController, BarElement, Title, Tooltip, Legend);
+Chart.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 ```
 
 setup data and other settings
