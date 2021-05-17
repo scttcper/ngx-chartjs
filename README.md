@@ -54,7 +54,7 @@ register chartjs at root of app or module. Must run before this component mounts
 ```ts
 // What you register will depend on what chart you are using and features used.
 import { BarController, BarElement, Chart, Title, Tooltip, Legend } from 'chart.js';
-Chart.register(BarController, BarElement, Chart, Title, Tooltip, Legend);
+Chart.register(BarController, BarElement, Title, Tooltip, Legend);
 ```
 
 setup data and other settings
