@@ -16,7 +16,7 @@ declare let require: any;
   selector: 'ngx-chartjs',
   template: `<canvas #ref [attr.height]="height" [attr.width]="width"></canvas>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styles: [':host { display: block }']
+  styles: [':host { display: block }'],
 })
 export class ChartjsComponent implements AfterViewInit, OnChanges {
   @ViewChild('ref') ref!: ElementRef<HTMLCanvasElement>;
@@ -62,8 +62,9 @@ export class ChartjsComponent implements AfterViewInit, OnChanges {
 
     // In order to allow for universal rendering, we import chartjs runtime with `require` to prevent node errors
     // eslint-disable-next-line @typescript-eslint/naming-convention,@typescript-eslint/no-shadow
-    const { Chart } = require('chart.js');
-    this.zone.runOutsideAngular(() => {
+    this.zone.runOutsideAngular(async () => {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      const { Chart } = await import('chart.js');
       this.chartInstance = new Chart(node, {
         type: this.type,
         data: this.data,
